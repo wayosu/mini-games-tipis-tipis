@@ -1,0 +1,71 @@
+/* Gradien latar belakang animasi */
+body {
+    background: linear-gradient(135deg, #1e3a8a, #9333ea, #f59e0b);
+    background-size: 300% 300%;
+    animation: gradientBG 10s ease infinite;
+}
+
+@keyframes gradientBG {
+    0% {background-position: 0% 50%;}
+    50% {background-position: 100% 50%;}
+    100% {background-position: 0% 50%;}
+}
+
+/* Efek animasi masuk untuk heading */
+h1 {
+    animation: fadeIn 2s ease;
+}
+
+@keyframes fadeIn {
+    0% {opacity: 0; transform: translateY(-20px);}
+    100% {opacity: 1; transform: translateY(0);}
+}
+
+/* Tambahkan sedikit animasi hover pada tombol */
+.game-button:hover {
+    transform: scale(1.1);
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+/* Efek glow pada teks */
+.glow-effect {
+    text-shadow: 0 0 10px #ffffff, 0 0 20px #ff00ff, 0 0 30px #ff00ff, 0 0 40px #ff00ff, 0 0 50px #ff00ff;
+}
+
+/* Animasi zoom-in saat popup muncul */
+@keyframes zoomIn {
+    0% {
+        transform: scale(0.8);
+        opacity: 0;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+/* Animasi zoom-out saat popup ditutup */
+@keyframes zoomOut {
+    0% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(0.8);
+        opacity: 0;
+    }
+}
+
+/* Kelas animasi untuk masuk dan keluar popup */
+.animate-zoomIn {
+    animation: zoomIn 0.3s ease-out;
+}
+
+.animate-zoomOut {
+    animation: zoomOut 0.3s ease-out;
+}
+
+/* Efek glowing pada tombol */
+.glow-button {
+    box-shadow: 0 0 8px #34d399, 0 0 16px #10b981, 0 0 24px #34d399;
+}

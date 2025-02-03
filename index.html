@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mini Games Tipis Tipis</title>
+    <script src="welcomePopup.js" defer></script>
+    <script src="main.js" defer></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <link href="index.css" rel="stylesheet">
+</head>
+<body class="text-white font-sans selection:bg-purple-400 selection:text-black">
+
+<div id="menu" class="flex flex-col items-center justify-center min-h-screen">
+    <!-- GIF -->
+    <img src="Paz.gif" class="animate-zoomIn w-[120px]">
+
+    <!-- Judul Halaman -->
+    <h1 class="text-4xl sm:text-6xl font-bold mb-10 text-center font-['Press_Start_2P'] text-white drop-shadow-lg">
+        Mini Games Tipis Tipis
+    </h1>
+
+    <!-- Daftar Game -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+        <button
+                onclick="openGame('snake')"
+                class="game-button bg-green-500 hover:bg-green-700 text-xl sm:text-2xl px-6 py-3 rounded-lg shadow-lg flex items-center justify-center transition"
+        >
+            <span class="mr-2">🐍</span> Game Ular
+        </button>
+
+        <button
+                onclick="openGame('tictactoe')"
+                class="game-button bg-green-500 hover:bg-green-700 text-xl sm:text-2xl px-6 py-3 rounded-lg shadow-lg flex items-center justify-center transition"
+        >
+            <span class="mr-2">❌</span> Tic Tac Toe
+        </button>
+
+        <button
+                onclick="alert('Game Belum Tersedia')"
+                class="game-button bg-blue-500 hover:bg-blue-700 text-xl sm:text-2xl px-6 py-3 rounded-lg shadow-lg flex items-center justify-center transition"
+        >
+            <span class="mr-2">🎮</span> Game 3 (Coming Soon)
+        </button>
+    </div>
+
+    <!-- Copyright atau Footer -->
+    <footer class="mt-10 text-sm text-gray-300">
+        Created with ❤️ by <a href="https://github.com/wayosu" class="hover:underline">Wayosu</a> and my friend AI
+    </footer>
+</div>
+
+<!-- Canvas untuk Game Snake -->
+<div id="snakeGame" class="hidden">
+    <div class="flex flex-col items-center justify-center min-h-screen bg-gray-900 text-white">
+        <!-- Heading Game -->
+        <h1 class="text-3xl sm:text-5xl font-bold mb-6 capitalize font-['Press_Start_2P']">Game Ular</h1>
+
+        <!-- Live Score -->
+        <div id="scoreDisplay" class="text-2xl font-semibold text-green-500 mb-4 shadow-lg"></div>
+
+        <!-- Kanvas Game -->
+        <canvas id="gameCanvas" class="border-4 border-white rounded-lg shadow-lg" width="500" height="500"></canvas>
+
+        <!-- Tombol Menu -->
+        <button onclick="returnToMenu()" class="bg-red-600 hover:bg-red-700 text-xl px-6 py-3 rounded mt-6 shadow-lg">
+            Kembali ke Menu
+        </button>
+    </div>
+</div>
+
+<!-- Canvas untuk Game Tic Tac Toe -->
+<div id="tictactoeGame" class="hidden">
+    <div class="flex flex-col items-center justify-center min-h-screen bg-gray-900 text-white">
+        <h1 class="text-3xl sm:text-5xl font-bold mb-6 capitalize font-['Press_Start_2P']">Game Tic Tac Toe</h1>
+        <canvas id="tictactoeCanvas" class="border-4 border-white rounded-lg shadow-lg" width="500" height="500"></canvas>
+        <button onclick="returnToMenu()" class="bg-red-600 hover:bg-red-700 text-xl px-6 py-3 rounded mt-6 shadow-lg">Kembali ke Menu</button>
+    </div>
+</div>
+</body>
+</html>
